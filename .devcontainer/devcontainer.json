@@ -1,0 +1,17 @@
+{
+  "name": "Debian 13 Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/base:trixie",
+  "runArgs": [
+    "--cap-add=SYS_ADMIN",
+    "--device=/dev/fuse",
+    "--security-opt=seccomp=unconfined",
+    "--security-opt=apparmor=unconfined",
+    "--security-opt=label=disable"
+    "--shm-size=8gb"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": []
+    }
+  }
+}
