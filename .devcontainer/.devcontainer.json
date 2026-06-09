@@ -1,0 +1,22 @@
+{
+  "name": "Ubuntu Systemd Privileged Dev Container",
+  "image": "ubuntu:latest", 
+  "privileged": true,
+  "runArgs": [
+    "--cap-add=SYS_ADMIN",
+    "--device=/dev/fuse",
+    "--security-opt=seccomp=unconfined",
+    "--security-opt=apparmor=unconfined",
+    "--security-opt=label=disable",
+    "--shm-size=8gb",
+    "--volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  ],
+  "entrypoint": ["/sbin/init"],
+  "overrideCommand": false,
+  "postCreateCommand": "systemctl status",
+  "customizations": {
+    "vscode": {
+      "extensions": []
+    }
+  }
+}
