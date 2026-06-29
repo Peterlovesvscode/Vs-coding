@@ -1,8 +1,8 @@
 name: Custom Ubuntu Workflow
 
+# This enables the manual "Run workflow" button in the GitHub UI
 on:
-  push:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   run-commands:
@@ -16,6 +16,5 @@ jobs:
         run: |
           sudo apt update
           sudo apt install neofetch -y
-          clear
           echo "Hello from GitHub actions!"
           neofetch
